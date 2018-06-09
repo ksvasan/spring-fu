@@ -19,6 +19,7 @@ include("bootstraps",
 		"dependencies",
 		"docs",
 		"modules",
+		"modules:cors",
 		"modules:logging",
 		"modules:logging-logback",
 		"modules:dynamic-configuration",
@@ -37,4 +38,3 @@ include("bootstraps",
 		"samples:coroutine-webapp",
 		"samples:minimal-webapp",
 		"samples:reactive-webapp")
-
