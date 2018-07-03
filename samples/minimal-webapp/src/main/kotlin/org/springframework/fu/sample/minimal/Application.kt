@@ -17,12 +17,12 @@
 package org.springframework.fu.sample.minimal
 
 import org.springframework.fu.application
-import org.springframework.fu.module.webflux.netty.netty
+import org.springframework.fu.module.webflux.jetty.jetty
 import org.springframework.fu.module.webflux.webflux
 
 val app = application {
 	webflux {
-		server(netty()) {
+		server(jetty()) {
 			routes {
 				GET("/") {
 					ok().syncBody("Hello world!")
