@@ -56,6 +56,8 @@ subprojects {
 		mavenCentral()
 		maven("https://repo.spring.io/libs-milestone")
 		maven("https://repo.spring.io/snapshot")
+		maven("https://oss.sonatype.org/content/repositories/snapshots/")
+
 	}
 	dependencyManagement {
 		val bootVersion: String by project
@@ -63,11 +65,19 @@ subprojects {
 		imports {
 			mavenBom("org.springframework.boot:spring-boot-dependencies:$bootVersion") {
 				bomProperty("kotlin.version", "1.2.51")
+				bomProperty("netty.version", "4.1.26.Final-SNAPSHOT")
 			}
 		}
 		dependencies {
 			dependency("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
 			dependency("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:$coroutinesVersion")
+			dependency("io.netty:netty-codec-socks:4.1.26.Final-SNAPSHOT")
+			dependency("io.netty:netty-codec:4.1.26.Final-SNAPSHOT")
+			dependency("io.netty:netty-transport-native-unix-common:4.1.26.Final-SNAPSHOT")
+			dependency("io.netty:netty-transport:4.1.26.Final-SNAPSHOT")
+			dependency("io.netty:netty-buffer:4.1.26.Final-SNAPSHOT")
+			dependency("io.netty:netty-resolver:4.1.26.Final-SNAPSHOT")
+			dependency("io.netty:netty-common:4.1.26.Final-SNAPSHOT")
 		}
 	}
 }
