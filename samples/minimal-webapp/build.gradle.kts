@@ -7,7 +7,6 @@ plugins {
 dependencies {
 	implementation(project(":modules:webflux-netty"))
 	testImplementation(project(":modules:test"))
-	implementation("com.jcraft:jzlib:1.1.3") // For Netty + Graal
 }
 
 configurations {
